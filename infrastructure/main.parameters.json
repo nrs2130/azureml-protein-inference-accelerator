@@ -1,0 +1,41 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "location": {
+        "value": "eastus2"
+      },
+      "workspaceName": {
+        "value": "protein-inference-ws"
+      },
+      "useVnet": {
+        "value": true
+      },
+      "createAmlPrivateEndpoint": {
+        "value": true
+      },
+      "vmSize": {
+        "value": "Standard_DS3_v2"
+      },
+      "minNodeCount": {
+        "value": 0
+      },
+      "maxNodeCount": {
+        "value": 2
+      },
+      "adminObjectId": {
+        "value": ""
+      },
+      "dataScientistObjectId": {
+        "value": ""
+      },
+      "readerObjectId": {
+        "value": ""
+      },
+      "monthlyBudgetLimit": {
+        "value": 0
+      }
+    }
+  }
+  
+  

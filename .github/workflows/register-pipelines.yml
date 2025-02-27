@@ -1,0 +1,33 @@
+name: Register Pipelines
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  register_pipelines:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Register ML pipelines in Azure ML
+        env:
+          WORKSPACE_NAME: myWorkspace
+          RESOURCE_GROUP: my-aml-rg
+          SUBSCRIPTION_ID: 0000-1111-2222-3333
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+        run: |
+          pip install azureml-core azureml-pipeline-core
+          python scripts/register_pipelines.py \
+            --workspace $WORKSPACE_NAME \
+            --resource-group $RESOURCE_GROUP \
+            --subscription $SUBSCRIPTION_ID
+

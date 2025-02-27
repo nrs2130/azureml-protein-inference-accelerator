@@ -1,0 +1,26 @@
+name: Deploy Infra
+
+on: [push]
+
+jobs:
+  deploy_infrastructure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy Azure ML infrastructure
+        run: |
+          az deployment group create \
+            --resource-group $RESOURCE_GROUP \
+            --template-file infrastructure/main.bicep \
+            --parameters infrastructure/main.parameters.json
+
+
+
