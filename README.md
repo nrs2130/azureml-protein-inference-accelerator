@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Azure ML Protein Inference Accelerator
 
 This repository provides an **out-of-the-box** solution for deploying an Azure Machine Learning environment to run large-scale protein inference workloads (e.g., [AlphaFold](https://github.com/deepmind/alphafold) and [RoseTTAFold](https://github.com/RosettaCommons/RoseTTAFold)) on Azure.
@@ -44,7 +43,5 @@ You have two main approaches:
    ```bash
    git clone https://github.com/nrs2130/azureml-inference-accelerator.git
    cd azureml-inference-accelerator
-=======
-# azureml-protein-inference-accelerator
-Drug discovery solution accelerator using Azure infrastructure
->>>>>>> db8d1f5df6dbd3ac0d8b1c2381eb5d6cee9e2527
+
+
