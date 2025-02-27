@@ -41,5 +41,5 @@ You have two main approaches:
 1. In GitHub, click **Fork** → select your GitHub account/org.
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/<your-account>/azureml-inference-accelerator.git
+   git clone https://github.com/nrs2130/azureml-inference-accelerator.git
    cd azureml-inference-accelerator
